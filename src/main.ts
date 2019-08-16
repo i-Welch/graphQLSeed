@@ -2,7 +2,7 @@ import { GraphQLServer } from 'graphql-yoga';
 
 const resolvers = {
 	Query: {
-		hello: (_, { name }) => `Hello ${name || 'World'}`
+		hello: (root, args, context, info) => `Hello ${args.name || 'World'}`
 	}
 }
 
